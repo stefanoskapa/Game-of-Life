@@ -1,5 +1,5 @@
-var a = 10;
-var b = 10;
+var a = 50;
+var b = 50;
 var resultTable = '<table cellspacing="0" cellpadding="0">';
 
 for (var i = 0; i < parseInt(a); i++) {
