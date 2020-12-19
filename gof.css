@@ -1,9 +1,12 @@
+
 .regular-checkbox {
 	-webkit-appearance: none;
 	background-color: #fafafa;
-	border: 1px solid #cacece;
-	padding: 9px;
-	display: inline-block;
+  border: 1px solid #cacece;
+  float:left;
+  padding: 20px;
+  margin:0px;
+	/*display: inline-block;*/
 	position: relative;
 }
 
