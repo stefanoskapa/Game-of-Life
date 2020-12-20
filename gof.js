@@ -1,8 +1,10 @@
-const a = 200;
+const a = 50;
+var isPlaying = false;
+var interv;
 var resultTable = '<table name = "mytab" cellspacing="0" cellpadding="0">';
-for (var i = 0; i < parseInt(a); i++) {
+for (var i = 0; i < a; i++) {
     resultTable += '<tr>';
-    for (var j = 0; j < parseInt(a); j++) {
+    for (var j = 0; j < a; j++) {
     var uid = i+'.'+j;
         resultTable += '<td class="container"><input type="checkbox" id="'+uid+'" class="regular-checkbox"><\/td>';
     }
@@ -24,28 +26,36 @@ function aliveNeigh(ida) {
     if ((bbb+1 <= a-1 && document.getElementById(aaa + '.' + (bbb + 1)).checked)) count++;
     if ((aaa+1 <=a-1 && bbb-1 >=0) && (document.getElementById((aaa + 1) +'.' + (bbb - 1)).checked)) count++;
     if ((aaa+1 <=a-1 && document.getElementById((aaa + 1) + '.' + bbb).checked)) count++;
-    if ((aaa+1 <=a-1 && bbb+1<=a-1) && (document.getElementById((aaa + 1) + '.' + (bbb + 1)).checked)) count++;
-    
+    if ((aaa+1 <=a-1 && bbb+1<=a-1) && (document.getElementById((aaa + 1) + '.' + (bbb + 1)).checked)) count++;   
     return count;
 }
 
 function play(){    
-        setInterval(nextGen, 300);
+        
+     if (isPlaying==false) {
+        interv = setInterval(nextGen, 100);
+        document.getElementById('play01').innerHTML = 'Pause';
+     } else {
+         clearInterval(interv);
+         document.getElementById('play01').innerHTML = 'Play';
+     }
+     isPlaying = !isPlaying;
+        
 }
 function nextGen() {
     
-    var storage = new Array(250);
+    var storage = new Array(a*a);
     counta = 0;
-    for (var i = 0; i < parseInt(a); i++) {       
-        for (var j = 0; j < parseInt(a); j++) {
+    for (var i = 0; i < a; i++) {       
+        for (var j = 0; j < a; j++) {
         var yy = i + '.' + j;
         storage[counta] = aliveNeigh(yy);
         counta++;
         }
     }
     counta = 0
-    for (var i = 0; i < parseInt(a); i++) {
-        for (var j = 0; j < parseInt(a); j++) {
+    for (var i = 0; i < a; i++) {
+        for (var j = 0; j < a; j++) {
         var yy = i + '.' + j;
         if (storage[counta]<2) {           
             document.getElementById(yy).checked=false;
@@ -60,6 +70,4 @@ function nextGen() {
         }
         }
     }
-
-
-
+ 
