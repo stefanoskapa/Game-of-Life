@@ -1,12 +1,40 @@
 
+
+body {
+  background-color:#c9e9e9;
+}
+
+
+
+button {
+  background-color: white;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  border: 2px solid #000000; 
+  transition-duration: 0.5s;
+  opacity: 0.6;
+  font-family: 'JetBrains Mono', monospace;
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button:hover {
+  background-color: #000000; 
+  color: white;
+  opacity: 1;
+}
+
+
+
 .regular-checkbox {
 	-webkit-appearance: none;
 	background-color: #fafafa;
-  border: 1px solid #cacece;
+  border: 1px solid #c9e9e9;
   float:left;
   padding: 5px;
   margin:0px;
-	/*display: inline-block;*/
 	position: relative;
 }
 
@@ -14,9 +42,20 @@
 
 .regular-checkbox:checked {
 	background-color: #000000;
-	border: 1px solid #000000;
+	border: 1px solid #c9e9e9;
 	
 }
 .regular-checkbox:focus{
   outline:0;
 }
+
+table{
+  position:absolute;
+  top:-100px;
+  left:-100px;
+  z-index:-1;
+}
+
+
+
+
