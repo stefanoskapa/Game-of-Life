@@ -7,13 +7,17 @@ body {
 
 button {
   background-color: white;
-  font-size: 20px;
+  width:10vh;
+  height: 5vh;
+  font-size: 16px;
+  text-align: center;
   color: rgb(0, 0, 0);
   border: 2px solid #000000; 
   transition-duration: 0.5s;
   opacity: 0.6;
   font-family: 'JetBrains Mono', monospace;
-  padding:10px;
+  /*padding:10px;*/
+  text-align: center;
   z-index: 2;
  
 }
@@ -39,18 +43,18 @@ div.mybuttons {
 }
 
 .regular-checkbox {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 	background-color: #fafafa;
-  border: 1px solid #c9e9e9;
+  /*border: 0px solid #c9e9e9;*/
   float:left;
-  padding: 5px;
+  padding: 7px;
   margin:0px;
 	position: relative;
 }
 
 .regular-checkbox:checked {
 	background-color: #000000;
-	border: 1px solid #c9e9e9;
+	/*border: 1px solid #c9e9e9; */
 	
 }
 .regular-checkbox:focus{
@@ -58,53 +62,11 @@ div.mybuttons {
 }
 
 table{
-  left:-50px;
-  top:-50px;
+
   position:absolute;
   z-index:0;
 }
 
-/*
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-*/
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/*
-/* Change the background color of the dropdown button when the dropdown content is shown 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-*/
