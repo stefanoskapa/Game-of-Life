@@ -1,24 +1,31 @@
-const a = 30;
+const a = 35;
 const inputCollection = [];
 var isPlaying = false;
 const table = document.createElement('table');
-
 table.name = 'mytab';
 table.id = 'abc';
 
 for (let i = 0; i < a; i++) {
     const row = table.insertRow();
     for (let j = 0; j < a; j++) {
+        
         const input = document.createElement('input');
         input.classList.add('regular-checkbox');
+        
         input.type = 'checkbox';
+        if ((i<=1) || (i>=a-2) || (j<=1) || (j>=a-2)) {
+            input.style.visibility = "hidden";
+        }
         inputCollection.push(input);
         const cell = row.insertCell();
         cell.append(input);
+        
     }
 }
 
+
 document.body.append(table);
+
 
 function reset() {
     count = 1
@@ -36,7 +43,8 @@ document.addEventListener('mouseover', function () {
 function countNei(index) {
     var count = 0;
     
-    if (index % a !=0 && index>a-1 && inputCollection[index - a - 1].checked) count++; //fixed
+    if (index % a !=0 && index>a-1 && inputCollection[index - a - 1].checked) count++;
+     
     if (index % a != 0 && inputCollection[index - 1].checked) count++;//fixed
     if (index % a !=0 && index < a*a-a && inputCollection[index + a - 1].checked) count++;//fixed
     if (index < a*a-a && inputCollection[index + a].checked) count++; //fixed
@@ -73,7 +81,8 @@ function nextGen() {
         if (countNei(i) == 3 && inputCollection[i].checked == false) storage.push(i);
         if (countNei(i) < 2 && inputCollection[i].checked == true) storage.push(i);
         if (countNei(i) > 3 && inputCollection[i].checked == true) storage.push(i);
-    }    
+    }   
+    
     storage.forEach(index => {   
     inputCollection[index].checked = !inputCollection[index].checked;
     });
