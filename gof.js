@@ -1,4 +1,4 @@
-const a = 35;
+const a = 45;
 const inputCollection = [];
 var isPlaying = false;
 const table = document.createElement('table');
