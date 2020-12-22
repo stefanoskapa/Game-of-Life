@@ -35,14 +35,16 @@ document.addEventListener('mouseover', function () {
 
 function countNei(index) {
     var count = 0;
-    if (index - a - 1 >= 0 && inputCollection[index - a - 1].checked) count++;
-    if (index - 1 > 0 && inputCollection[index - 1].checked) count++;
-    if (index + a - 1 <= a*a-1 && inputCollection[index + a - 1].checked) count++;
-    if (index + a <= a*a-1 && inputCollection[index + a].checked) count++;
-    if (index + a + 1 <= a*a-1 && inputCollection[index + a + 1].checked) count++;
-    if (index + 1 <= a*a-1 && inputCollection[index + 1].checked) count++;
-    if (index - a + 1 >= 0 && inputCollection[index - a + 1].checked) count++;
-    if (index - a >= 0 && inputCollection[index - a].checked) count++;
+    
+    if (index % a !=0 && index>a-1 && inputCollection[index - a - 1].checked) count++; //fixed
+    if (index % a != 0 && inputCollection[index - 1].checked) count++;//fixed
+    if (index % a !=0 && index < a*a-a && inputCollection[index + a - 1].checked) count++;//fixed
+    if (index < a*a-a && inputCollection[index + a].checked) count++; //fixed
+    if (index % a != a-1 && index < a*a-a && inputCollection[index + a + 1].checked) count++;//fixed
+    if (index % a != a - 1 && inputCollection[index + 1].checked) count++;//fixed
+    if (index % a != a-1 && index > a-1  && inputCollection[index - a + 1].checked) count++;//fixed
+    if (index >= a && inputCollection[index - a].checked) count++;//fixed
+      
     return count;
 }
 

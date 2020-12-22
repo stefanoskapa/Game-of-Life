@@ -2,7 +2,7 @@
 
 body {
   background-color:#c9e9e9;
-  overflow: hidden;
+ /* overflow: hidden;*/
 }
 
 button {
@@ -16,7 +16,6 @@ button {
   transition-duration: 0.5s;
   opacity: 0.6;
   font-family: 'JetBrains Mono', monospace;
-  /*padding:10px;*/
   text-align: center;
   z-index: 2;
  
@@ -54,15 +53,15 @@ div.mybuttons {
 
 .regular-checkbox:checked {
 	background-color: #000000;
-	/*border: 1px solid #c9e9e9; */
-	
 }
+
 .regular-checkbox:focus{
   outline:0;
 }
 
 table{
-
+  width:1vmin;
+  height:1vmin;
   position:absolute;
   z-index:0;
 }
