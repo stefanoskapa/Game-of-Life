@@ -2,7 +2,6 @@
 
 body {
   background-color:#c9e9e9;
- /* overflow: hidden;*/
 }
 
 button {
@@ -33,9 +32,9 @@ button:hover {
 }
 
 div.mybuttons {
-  width: 250px;
-  max-width: 250px;
-  margin:10px 10px 10px 10px;
+  top:0px;
+  left:0px;
+  margin: 5px;
   display:inline-block;
   position: fixed;
   z-index: 2;
@@ -44,7 +43,6 @@ div.mybuttons {
 .regular-checkbox {
   -webkit-appearance: none;
 	background-color: #fafafa;
-  /*border: 0px solid #c9e9e9;*/
   float:left;
   padding: 7px;
   margin:0px;
@@ -60,8 +58,7 @@ div.mybuttons {
 }
 
 table{
-  width:1vmin;
-  height:1vmin;
+
   position:absolute;
   z-index:0;
 }
